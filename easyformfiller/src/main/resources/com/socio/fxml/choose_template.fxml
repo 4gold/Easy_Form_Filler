@@ -14,10 +14,8 @@
 <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
   <children>
         <fx:include source="side_buttons.fxml"/>
-        <GridPane layoutX="112.0" prefHeight="373.0" prefWidth="507.0">
-           <children>
-              
-           </children>
+        <GridPane fx:id="mainPane" layoutX="112.0" prefHeight="373.0" prefWidth="507.0">
+          
         </GridPane>
         <ScrollBar layoutX="626.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="18.0" />
   </children>

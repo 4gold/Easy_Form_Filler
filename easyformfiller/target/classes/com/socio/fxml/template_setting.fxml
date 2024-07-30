@@ -15,9 +15,7 @@
   <children>
         <fx:include source="side_buttons.fxml"/>
         <GridPane layoutX="112.0" prefHeight="373.0" prefWidth="507.0">
-           <children>
-              
-           </children>
+    
         </GridPane>
         <ScrollBar layoutX="626.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="18.0" />
   </children>

@@ -8,10 +8,12 @@
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/controller/SourceSetting.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/model/CellData.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/viewController/SourceDataController.java
+/Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/viewController/ChooseTemplateController.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/loader/JsonLoader.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/model/CellDataFormat.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/test/App.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/Icontroller/ISetting.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/controller/TemplateSetting.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/Icontroller/ITemplateSetting.java
+/Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/viewController/SceneController.java
 /Users/liuyixin/eclipse-workspace/easyformfiller/src/main/java/com/socio/controller/Setting.java

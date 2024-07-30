@@ -11,47 +11,15 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <VBox prefHeight="400.0" prefWidth="113.0">
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Source Data" />
-                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Template Upload" />
-                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Template Setting" />
-                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Choose Template " />
-                  <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Output Data" />
-               </children>
-            </VBox>
-            <GridPane layoutX="112.0" prefHeight="373.0" prefWidth="507.0">
-              <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="128.0" minWidth="10.0" prefWidth="42.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="222.0" minWidth="10.0" prefWidth="201.0" />
-                  <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="220.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="43.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="58.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="174.0" minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="20.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="+" GridPane.rowIndex="1" />
-                  <TextField prefHeight="26.0" prefWidth="164.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <TextField GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <CheckBox mnemonicParsing="false" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-                  <Label text="Data Name" GridPane.columnIndex="1" />
-                  <Label text="Data" GridPane.columnIndex="2" />
-                  <Label text="Is Fixed" GridPane.columnIndex="3" />
-               </children>
-            </GridPane>
-            <ScrollBar layoutX="626.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="18.0" />
-      </children>
-    </AnchorPane>
+        <fx:include source="side_buttons.fxml"/>
+        <GridPane layoutX="112.0" prefHeight="373.0" prefWidth="507.0">
+           <children>
+              
+           </children>
+        </GridPane>
+        <ScrollBar layoutX="626.0" orientation="VERTICAL" prefHeight="400.0" prefWidth="18.0" />
   </children>
-</VBox>
+</AnchorPane>
+

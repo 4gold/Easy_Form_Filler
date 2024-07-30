@@ -6,28 +6,18 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.socio.viewController.SourceDataController" >
+
+<AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.socio.viewController.SourceDataController">
   <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
-      <children>
-            <VBox  prefHeight="400.0" prefWidth="113.0">
-            	<children>
-					<Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Source Data" />
-					<Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Template Upload" />
-					<Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Template Setting" />
-					<Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Choose Template " />
-					<Button mnemonicParsing="false" prefHeight="80.0" prefWidth="113.0" text="Output Data" />
-                </children>
-            </VBox>
-            <TableView fx:id="sourcetable" layoutX="113.0" layoutY="46.0" prefHeight="354.0" prefWidth="528.0">
-              <columns>
-                <TableColumn fx:id="dataName" prefWidth="230.0" text="Data Name" />
-                  <TableColumn fx:id="data" prefWidth="230.0" text="Data" />
-                  <TableColumn fx:id="isFixed" prefWidth="66.0" text="Is Fixed" />
-              </columns>
-            </TableView>
-            <Button layoutX="123.0" layoutY="14.0" mnemonicParsing="false" text="+" />
-      </children>
-    </AnchorPane>
+       	<fx:include source="side_buttons.fxml"/>
+        <TableView fx:id="sourcetable" layoutX="113.0" layoutY="46.0" prefHeight="354.0" prefWidth="528.0">
+          <columns>
+            <TableColumn fx:id="dataName" prefWidth="230.0" text="Data Name" />
+              <TableColumn fx:id="data" prefWidth="230.0" text="Data" />
+              <TableColumn fx:id="isFixed" prefWidth="66.0" text="Is Fixed" />
+          </columns>
+        </TableView>
+        <Button layoutX="123.0" layoutY="14.0" mnemonicParsing="false" text="+" onAction="#switchToAddWindow" />
   </children>
-</VBox>
+</AnchorPane>
+

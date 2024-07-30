@@ -26,8 +26,14 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 	public static Map<String, SourceCellData> sourceInfos;
 	
 	public SourceSetting(){
-		sourceInfos = new HashMap<>();
-		loadSourceInfo(); // will initiate
+		try {
+			sourceInfos = new HashMap<>();
+			loadSourceInfo(); // will initiate
+		} catch (Exception e) {
+			logger.error("source setting initialization fail. ");
+			e.printStackTrace();
+		}
+		logger.info("source setting initialized. ");
 	}
 
 	/**
@@ -48,12 +54,18 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 		return sourceInfos;
 	}
 	
-	// get basic infos
+	/**
+	 *  load source info into cache
+	 */
 	@Override
 	public void loadSourceInfo(){
 		sourceInfos.putAll(loadAndReturnSourceInfo());
 	}
 	
+	/**
+	 * load and return source info
+	 * @return source info
+	 */
 	@Override
 	public Map<String, SourceCellData> loadAndReturnSourceInfo(){
 		List<SourceCellData> rowData = new ArrayList<>();
@@ -67,19 +79,24 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 			}
 		} catch (IOException e) {
 			logger.error("Fail to load source Infomations");
+			e.printStackTrace();
 		}
 		logger.info("Source Informations loading complete");
 		
 		return tempData;
 	}
 	
-	// write info into basicInfo.json
+	/**
+	 *  write info into basicInfo.json
+	 */
 	@Override
 	public void addSourceInfo(String dataName, String data){
 		addSourceInfo(dataName, data, true);
 	}
 	
-	// write info into sourceInfo.json
+	/**
+	 *  write info into sourceInfo.json
+	 */
 	@Override
 	public void addSourceInfo(String dataName, String data, boolean isFixedData){
 		try {
@@ -91,11 +108,14 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 			writeJson();
 		} catch (IOException e) {
 			logger.error("cannot add data [ " + dataName + " : " + data + " ]");
+			e.printStackTrace();
 		}
 		logger.info("data [ " + dataName + " : " + data + " ] added");
 	}
 	
-	// update. if exist, overwrite info
+	/**
+	 *  update. if exist, overwrite info
+	 */
 	@Override
 	public void updateSourceInfo(String dataName, String data, boolean isFixedData){
 		try {
@@ -103,6 +123,7 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 			writeJson();
 		} catch (IOException e) {
 			logger.error("cannot add data [ " + dataName + " : " + data + " ]");
+			e.printStackTrace();
 		}
 		logger.info("data [ " + dataName + " : " + data + " ] added");
 	}
@@ -124,11 +145,14 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 			writeJson();
 		} catch (IOException e) {
 			logger.error("cannot remove data [ " + dataName + " ]");
+			e.printStackTrace();
 		}
 		logger.info("data [ " + dataName + " ] removed");
 	}
 	
-	// clean all data, remain the column name
+	/**
+	 *  clean all data, remain the column name
+	 */
 	@Override
 	public void cleanAllSourceInfo() {
 		sourceInfos.forEach((key, sourceInfo)->{
@@ -140,12 +164,15 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 				writeJson();
 			} catch (IOException e) {
 				logger.error(String.format("cannot clean data"));
+				e.printStackTrace();
 			}
 		});	
 		logger.info("source data cleared");
 	}
 	
-	// clean data, remain the column name
+	/**
+	 *  clean data, remain the column name
+	 */
 	@Override
 	public void cleanSourceInfo(String dataName) {
 		sourceInfos.get(dataName).setData(null);
@@ -153,6 +180,7 @@ public class SourceSetting extends Setting<List<SourceCellData>> implements ISou
 			writeJson();
 		} catch (IOException e) {
 			logger.error(String.format("cannot clean data [ %s ] ", dataName));
+			e.printStackTrace();
 		}
 		logger.info(String.format("data [ %s ] cleared ", dataName));
 	}

@@ -1,5 +1,6 @@
 package com.socio.test;
 
+import com.socio.Icontroller.ISetting;
 import com.socio.Icontroller.ISourceSetting;
 import com.socio.Icontroller.ITemplateSetting;
 import com.socio.controller.SourceSetting;
@@ -14,7 +15,7 @@ public class App
     public static void main( String[] args )
     {
     	// test SourceLoader
-    	String fileName = "/Users/liuyixin/Downloads/STSC016/9 金石堂/金石堂_群學2月新品提報(20230208).xlsx";
+    	//String fileName = "/Users/liuyixin/Downloads/STSC016/9 金石堂/金石堂_群學2月新品提報(20230208).xlsx";
         ISourceSetting basic = new SourceSetting();
         basic.getAllSourceData();
         basic.addSourceInfo("id", "1");
@@ -37,7 +38,11 @@ public class App
         kingstone.writeJson();
         
         kingstone.writeExcelFile("/Users/liuyixin/Downloads/");
+        
+        ISetting setting = new SourceSetting();
+        setting.getAllTemplateSettingFileNames().forEach(name-> {
+        	System.out.println(name);
+        });
     }
-    
  
 }
